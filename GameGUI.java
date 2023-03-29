@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class GameGUI extends JFrame{
     public GameGUI(){
-        JFrame start_frame = new JFrame("P.D");
+        JFrame start_frame = new JFrame("Video Game Project");
         int width = 1200;
         int height = 800;
         start_frame.setSize(width, height);
