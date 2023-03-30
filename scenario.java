@@ -18,4 +18,8 @@ public class scenario {
     public void addOptions(String option){
         this.options.add(option);
     }
+
+    public void setBackground(String img){
+        this.backgroundImage = img;
+    }
 }
