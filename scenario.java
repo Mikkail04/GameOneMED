@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class scenario {
     
     private String scenarioName;
-    ArrayList<String> options = new ArrayList<String>();;
+    ArrayList<String> options = new ArrayList<String>();
     private String backgroundImage;
 
     /**
@@ -21,5 +21,9 @@ public class scenario {
 
     public void setBackground(String img){
         this.backgroundImage = img;
+    }
+
+    public ArrayList<String> printOptions(){
+        return options;
     }
 }
