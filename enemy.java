@@ -21,7 +21,7 @@ public class enemy {
 
     //Returns health stat for dmg calc
     public int health(){
-        return this.hp;
+        return hp;
     }
 
     //Use to change health points during combat
@@ -37,5 +37,9 @@ public class enemy {
     //Returs attack stat for dmg calc
     public int attack(){
         return this.atk;
+    }
+
+    public String toString(){
+        return name + "\nHP: " + hp;
     }
 }
