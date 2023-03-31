@@ -15,6 +15,24 @@ public class room {
     }
 
     /**
+     * Made a MEGA constructor
+     * combines the original one and the second addOptions method
+     * @param name
+     * @param option1
+     * @param option2
+     * @param option3
+     * @param option4
+     */
+    public room(String name, String option1, String option2, String option3, String option4){
+        this.roomName = name;
+        this.options.add(option1);
+        this.options.add(option2);
+        this.options.add(option3);
+        this.options.add(option4);
+    }
+
+
+    /**
      * @param option adds an option to choose from to options list
      */
     public void addOptions(String option){
