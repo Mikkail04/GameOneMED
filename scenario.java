@@ -23,7 +23,11 @@ public class scenario {
         this.backgroundImage = img;
     }
     
-    // public ArrayList<String> printOptions(){
-    //     return options;
-    // }
+    public ArrayList<String> printOptions(){
+        return options;
+    }
+
+    public String test(){
+        return "git pull is type weird";
+    }
 }
