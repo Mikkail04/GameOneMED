@@ -45,5 +45,9 @@ public class room {
         this.backgroundImage = img;
     }
 
+    //returns string holding image path
+    public String getBackground(){
+        return backgroundImage;
+    }
     
 }
