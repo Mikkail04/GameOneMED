@@ -22,8 +22,8 @@ public class scenario {
     public void setBackground(String img){
         this.backgroundImage = img;
     }
-
-    public ArrayList<String> printOptions(){
-        return options;
-    }
+    
+    // public ArrayList<String> printOptions(){
+    //     return options;
+    // }
 }
