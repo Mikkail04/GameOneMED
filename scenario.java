@@ -1,3 +1,7 @@
+/*"Scenarios" are rooms where the player can interact with the environment, enemies, npcs, etc.*/
+
+/*"Scenarios" are rooms where the player can interact with the environment, enemies, npcs, etc.*/
+
 import java.util.ArrayList;
 public class scenario {
     
@@ -18,16 +22,20 @@ public class scenario {
     public void addOptions(String option){
         this.options.add(option);
     }
-
-    public void setBackground(String img){
-        this.backgroundImage = img;
-    }
     
+    /*
+     * prints out the options array
+     */
     public ArrayList<String> printOptions(){
         return options;
     }
 
-    public String test(){
-        return "git pull is type weird";
+    /**
+     * @param img is set as the background of the scenario
+     */    
+    public void setBackground(String img){
+        this.backgroundImage = img;
     }
+
+    
 }
