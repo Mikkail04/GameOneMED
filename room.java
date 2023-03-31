@@ -1,19 +1,17 @@
-/*"Scenarios" are rooms where the player can interact with the environment, enemies, npcs, etc.*/
-
-/*"Scenarios" are rooms where the player can interact with the environment, enemies, npcs, etc.*/
+/*"Rooms" are rooms where the player can interact with the environment, enemies, npcs, etc.*/
 
 import java.util.ArrayList;
-public class scenario {
+public class room {
     
-    private String scenarioName;
+    private String roomName;
     ArrayList<String> options = new ArrayList<String>();
     private String backgroundImage;
 
     /**
-     * @param name sets name of scenario
+     * @param name sets name of room
      */
-    public scenario(String name){
-        this.scenarioName = name;
+    public room(String name){
+        this.roomName = name;
     }
 
     /**
@@ -31,7 +29,7 @@ public class scenario {
     }
 
     /**
-     * @param img is set as the background of the scenario
+     * @param img is set as the background of the room
      */    
     public void setBackground(String img){
         this.backgroundImage = img;
