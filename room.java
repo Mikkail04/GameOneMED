@@ -20,12 +20,22 @@ public class room {
     public void addOptions(String option){
         this.options.add(option);
     }
-    
-    /*
-     * prints out the options array
+
+    /**
+     * Mikkail wants to add MANY options so here ya go buddy
      */
-    public ArrayList<String> printOptions(){
-        return options;
+    public void addOptions(String option1, String option2, String option3, String option4){
+        this.options.add(option1);
+        this.options.add(option2);
+        this.options.add(option3);
+        this.options.add(option4);
+    }
+    /*
+     * Returns name of room
+     * and all options
+     */
+    public String toString(){
+        return "Room name: " + roomName + "\nOptions: \n" + options;
     }
 
     /**
