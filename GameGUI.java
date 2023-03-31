@@ -1,32 +1,65 @@
-import java.awt.Dimension;
-import java.awt.Rectangle;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GameGUI extends JFrame{
+    public Font customFont;
     public GameGUI(){
-        JFrame start_frame = new JFrame("Video Game Project");
-        int width = 1200;
-        int height = 800;
-        start_frame.setSize(width, height);
-        start_frame.setVisible(true);
-        start_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Panel to hold our buttons
-        JPanel start_panel = new JPanel();
-        start_panel.setLayout(null);
-        start_frame.add(start_panel);
+        JButton startButton;
+        JFrame start_Frame = new JFrame();
+        JPanel titlePanel = new JPanel();
+        JPanel startGameButton;
+        JLabel nameLabel;
+        
 
+        try {
+            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Ghastly_Panic.ttf")).deriveFont(60f);
+            GraphicsEnvironment graphE = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            graphE.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Ghastly_Panic.ttf")));
+        } catch (IOException | FontFormatException e) {
+            
+        }
 
-        // Button to initialize everything
-        JButton start_button = new JButton("Start");
-        int buttonWidth = 80;
-        int buttonHeight = 20;
-        start_button.setBounds(new Rectangle((width - buttonWidth)/2, (height - buttonHeight)/2, buttonWidth, buttonHeight));
-        start_button.setSize(new Dimension(buttonWidth, buttonHeight));
-        start_button.setFocusable(false);
-        start_panel.add(start_button);
+        
+
+        start_Frame.setSize(800,600);
+        start_Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        start_Frame.getContentPane().setBackground(Color.black);
+        start_Frame.setLayout(null);
+        start_Frame.setVisible(true);
+
+        Container con_Frame = start_Frame.getContentPane();
+        titlePanel.setBounds(100,100,600,150);
+        titlePanel.setBackground(Color.black);
+
+        startGameButton = new JPanel();
+        startGameButton.setBounds(300,400,200,100);
+        startGameButton.setBackground(Color.black);
+
+        startButton = new JButton("PRESS START");
+        startButton.setBackground(Color.black);
+        startButton.setForeground(Color.red);
+        startButton.setFont(customFont);
+
+        nameLabel = new JLabel("NIGHT TERRORS");
+        nameLabel.setBackground(Color.black);
+        nameLabel.setForeground(Color.red);
+        nameLabel.setFont(customFont);
+
+        titlePanel.add(nameLabel);
+        startGameButton.add(startButton);
+        con_Frame.add(titlePanel);
+        con_Frame.add(startGameButton);
+
     }
 }
