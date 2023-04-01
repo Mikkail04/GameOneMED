@@ -4,8 +4,10 @@ import java.util.Random;
 public class player {   
     private String name;
     private int lvl;
-    private int hp;
+    private int maxHp;
+    private int currentHp;
     private int atk;
+    private int skillPoints;
     private int sanity;
     private ArrayList<String> inv;
     Random rand = new Random();
@@ -16,11 +18,38 @@ public class player {
      */
     public player(String name){
         this.name = name;
-        hp = 10;
+        maxHp = 10;
         atk = 5;
         lvl = 1;
         inv = new ArrayList<String>();
     }
+
+    //Returns name of player
+    public String getPlayerName(){
+        return name;
+    }
+
+    //Returns health stat of player for dmg calc
+    public int getEnemyHealth(){
+        return hp;
+    }
+    
+    //Returns level of player
+    public int getPlayerLevel(){
+        return lvl;
+    }
+
+    //Use to change health points of player during combat
+    public void setPlayerHealth(int hp){
+        if(hp > 0){
+            this.hp = hp;
+        }
+        else{
+            this.hp = 0;
+        }
+    }
+
+    
 
     /**
      * When leveling up, stats will decrease randomly

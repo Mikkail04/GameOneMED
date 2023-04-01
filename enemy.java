@@ -4,6 +4,7 @@ public class enemy {
     private String name;
     private int hp;
     private int atk;
+    private String[] dialogue;
     private String[] actions;
 
     Random rand = new Random();
@@ -19,13 +20,18 @@ public class enemy {
         this.atk = atk;
     }
 
-    //Returns health stat for dmg calc
-    public int health(){
+    //Returns name of enemy
+    public String getEnemyName(){
+        return name;
+    }
+
+    //Returns health stat of enemy for dmg calc
+    public int getEnemyHealth(){
         return hp;
     }
 
-    //Use to change health points during combat
-    public void setHealth(int hp){
+    //Use to change health points of enemy during combat
+    public void setEnemyHealth(int hp){
         if(hp > 0){
             this.hp = hp;
         }
@@ -34,8 +40,8 @@ public class enemy {
         }
     }
 
-    //Returs attack stat for dmg calc
-    public int attack(){
+    //Returs attack stat of enemy for dmg calc
+    public int getEnemyAttack(){
         return this.atk;
     }
 

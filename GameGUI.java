@@ -15,6 +15,13 @@ public class GameGUI extends JFrame{
     public Font customFont;
     public GameGUI(){
 
+        // /*creates a room */
+        // room firstRoom = new room("First Room");
+        // /*adds options for the player to choose from to the first room*/
+        // firstRoom.addOptions("Attack", "Items", "Talk", "Inspect");
+        
+        // room bossRoom = new room("Boss Encounter");
+
         JButton startButton;
         JFrame start_Frame = new JFrame();
         JPanel titlePanel = new JPanel();
