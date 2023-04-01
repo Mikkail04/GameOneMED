@@ -6,6 +6,7 @@ public class player {
     private int lvl;
     private int hp;
     private int atk;
+    private int sanity;
     private ArrayList<String> inv;
     Random rand = new Random();
 
@@ -29,5 +30,19 @@ public class player {
         lvl++;
         hp += rand.nextInt(1, 5);
         atk += rand.nextInt(1, 3);
+    }
+
+    /**
+     * 
+     * @returns sanity
+     * pretty straightforward
+     */
+    public int getSanity(){
+        return sanity;
+    }
+
+    //Also pretty straightforward
+    public void setSanity(int sanity){
+        this.sanity = sanity;
     }
 }
