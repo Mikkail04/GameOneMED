@@ -47,14 +47,16 @@ public class player {
     //Use to change health points of player during combat
     public void setPlayerHealth(int hp){
         if(hp > 0){
-            this.hp = hp;
+            this.currentHp = hp;
         }
         else{
-            this.hp = 0;
+            this.currentHp = 0;
         }
     }
 
-    
+    public int getPlayerAttack(){
+        return atk;
+    }
 
     /**
      * When leveling up, stats will decrease randomly
@@ -62,7 +64,7 @@ public class player {
      */
     public void levelUp(){
         lvl++;
-        hp += rand.nextInt(1, 5);
+        maxHp += rand.nextInt(1, 5);
         atk += rand.nextInt(1, 3);
     }
 
