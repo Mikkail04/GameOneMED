@@ -29,9 +29,14 @@ public class player {
         return name;
     }
 
-    //Returns health stat of player for dmg calc
-    public int getEnemyHealth(){
-        return hp;
+     //Returns max health stat of player for dmg calc
+     public int getPlayerMaxHealth(){
+        return maxHp;
+    }
+
+    //Returns current health of player for dmg calc
+    public int getPlayerCurrentHealth(){
+        return currentHp;
     }
     
     //Returns level of player
