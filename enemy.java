@@ -2,7 +2,8 @@ import java.util.Random;
 
 public class enemy {
     private String name;
-    private int hp;
+    private int maxHp;
+    private int currentHp;
     private int atk;
     private String[] dialogue;
     private String[] actions;
@@ -26,8 +27,13 @@ public class enemy {
     }
 
     //Returns health stat of enemy for dmg calc
-    public int getEnemyHealth(){
-        return hp;
+    public int getEnemyMaxHealth(){
+        return maxHp;
+    }
+
+    //Returns current health of enemy for dmg calc
+    public int getEnemyCurrentHealth(){
+        return currentHp;
     }
 
     //Use to change health points of enemy during combat
