@@ -1,29 +1,11 @@
 public class combat {
-    private int playerHealth;
-    private int playerAttack;
-    private int enemyHealth;
-    private int enemyAttack;
-
     /**
-     * Takes the main stats for both parties
-     * @param playerHealth
-     * @param playerAttack
-     * @param enemyHealth
-     * @param enemyAttack
-     */
-    public combat(int playerHealth, int playerAttack, int enemyHealth, int enemyAttack){
-        this.playerHealth = playerHealth;
-        this.playerAttack = playerAttack;
-        this.enemyHealth = enemyHealth;
-        this.enemyAttack = enemyAttack;
-    }
-
-    /**
-     * Ngl this is confusing, but enter the attackers atk stat, and the defenders hp stat
+     * Enter the attackers atk stat, and the defenders hp stat
+     * Returns the difference of the two
      * @param atk
      * @param hp
      */
-    public void dmgCalc(int atk, int hp){
-
+    public static int dmgCalc(int atk, int hp){
+        return hp - atk;
     }
 }

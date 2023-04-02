@@ -17,7 +17,7 @@ public class enemy {
      */
     public enemy(String name, int hp, int atk){
         this.name = name;
-        this.hp = hp;
+        this.maxHp = hp;   
         this.atk = atk;
     }
 
@@ -39,19 +39,20 @@ public class enemy {
     //Use to change health points of enemy during combat
     public void setEnemyHealth(int hp){
         if(hp > 0){
-            this.hp = hp;
+            this.currentHp = hp;
         }
         else{
-            this.hp = 0;
+            this.currentHp = 0;
         }
     }
 
-    //Returs attack stat of enemy for dmg calc
+    //Returns attack stat of enemy for dmg calc
     public int getEnemyAttack(){
         return this.atk;
     }
 
+    //Returns name of enemy, and current hp. Might add atk stat
     public String toString(){
-        return name + "\nHP: " + hp;
+        return name + "\nHP: " + currentHp;
     }
 }
