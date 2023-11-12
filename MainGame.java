@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class MainGame {
     public static void main(String[] args) {
-        // GameGUI game = new GameGUI(); 
-        
+        // GameGUI game = new GameGUI(); // Commented out until we figure out the main game first
         Game();
     }
     public static void Game(){
@@ -17,6 +16,24 @@ public class MainGame {
         System.out.println("Welcome Young Blood, for your first Task I want you to defeat that goblin over there\n");
 
         fight(mainCharacter, goblin);
+        Item potion = new Item(10, "Healing Potion"); /* This is just testing the inventory system */
+        System.out.println("Here is a potion for your hard fought victory!");
+        mainCharacter.addToInventory(potion); // Ngl idk why I needed to do mainCharacter first for the methods to work
+        mainCharacter.showInventory(); // Testing the showing inventory systemmaBobber
+        
+        scan.close();
+    }
+
+    public void ScenarioOne(){
+        // PlaceHolder
+    }
+
+    public void ScenarioTwo(){
+        // PlaceHolder
+    }
+
+    public void ScenarioThree(){
+        //Placeholder
     }
 
     //tbh I dont really got a plan for this one

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+
+
 public class Character {
     // Attributes for the Character
     protected int health;
@@ -5,13 +8,15 @@ public class Character {
     protected String name;
     protected double critChance; 
     protected double critMultiplier;
+    private ArrayList<Item> inventory;
 
     public Character(int health, int attackPower,String name){
         this.health = health;
         this.attackPower = attackPower;
         this.name = name;
+        this.inventory = new ArrayList<>(); // Da invetory for da Player
     }
-
+    // how the character and monster objects lose health
     public void takeDamage(double damage){
         health -= damage;
         if(health <= 0){
@@ -23,16 +28,17 @@ public class Character {
         }
         
     }
-
+    
+    // Each attack the player does has a chance to land a critical Attack doubling their damage output
     public void critAttack(Character target){
-        critChance = Math.random() * 100;
         critMultiplier = 2;
         System.out.println(getName() + " atacks " + target.getName() + " with a crit, dealing " + getAttackPower() * critMultiplier + " attack\n");
         target.takeDamage(getAttackPower() * critMultiplier);
     }
-
+    // Normal attack
     public void attack(Character target){
-        if (critChance >= 1){
+        critChance = Math.random() * 100; // critChance needs to be generated here 
+        if (critChance >= 25){
             critAttack(target);
         }
         else{
@@ -41,6 +47,21 @@ public class Character {
         }
     }
 
+       // Tells the user that they added an item into their inventory
+    public void addToInventory(Item item){
+        inventory.add(item);
+        System.out.println(name + " has added " + item.getItemName() + " to their inventory" );
+    }
+
+    // Displays the players Inventory
+    public void showInventory(){
+        System.out.println(name + " INVETORY:");
+        for(Item item : inventory){
+            System.out.println("- " + item.getItemName());
+        }
+    }
+    
+    // Setter Methods
     public void setName(String name){
         this.name = name;
     }
@@ -50,15 +71,13 @@ public class Character {
     public void setAttackPower(int attackPower){
         this.attackPower = attackPower;
     }
-
+    // Getter Methods
     public String getName(){
         return name;
     }
-
     public int getHealth(){
         return health;
     }
-
     public int getAttackPower(){
         return attackPower;
     }
