@@ -9,4 +9,9 @@ public class Monster extends Character {
         System.out.println(getName() + " atacks " + target.getName() + ", dealing " + getAttackPower() + " attack\n");
         target.takeDamage(getAttackPower());
     }
+
+    public void weakAttack(Character target){
+        System.out.println(getName() + " atacks " + target.getName() + ", dealing " + getAttackPower() / 2 + " attack\n");
+        target.takeDamage(getAttackPower() / 2);
+    }
 }
