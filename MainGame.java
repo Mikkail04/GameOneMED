@@ -13,8 +13,8 @@ public class MainGame {
 
         String player = scan.nextLine();
 
-        Character mainCharacter = new Character(100,10,player);
-        Monster goblin = new Monster(50,99,"Goblin");
+        Character mainCharacter = new Character(1,10,player);
+        Monster goblin = new Monster(50,5,"Goblin");
 
         System.out.println("Welcome Young Blood, for your first Task I want you to defeat that goblin over there\n");
 
@@ -31,16 +31,16 @@ public class MainGame {
             System.out.println("Pick a move lil bro Your options are:\\n" + //
                     "Attack\\n" + //
                     "Defend\\n");  
-            String opt = scan.nextLine();
+            String opt = scan.nextLine().toLowerCase();
             switch(opt){
-                case "Attack":
+                case "attack":
                 mc.attack(mon);
                 mon.attack(mc);
                     break;
-                case "Defend":
+                case "defend":
                     mon.weakAttack(mc);
                     break;
-                case "SEXO??":
+                case "sexo??":
                     System.out.println("Ur attack got a small buff");
 
                     mc.setAttackPower(9999999);
