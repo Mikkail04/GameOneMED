@@ -14,14 +14,11 @@ public class Character {
 
     public void takeDamage(double damage){
         health -= damage;
+        System.out.println(name + " has taken " + damage + " damage\n" + "[REMAINING HP ---- " + health + "]\n");
         if(health <= 0){
-            health  = 0; // We want to make sure that our any enemy does not go under 0 health cause that wouldn't make sense LOL
+            health  = 0; // HP no go negative
             System.out.println("Game over hero!");
-        }
-        else{
-            System.out.println(name + " has taken " + damage + " damage\n" + "[REMAINING HP ---- " + health + "]");
-        }
-        
+        }  
     }
 
     public void critAttack(Character target){
@@ -36,8 +33,8 @@ public class Character {
             critAttack(target);
         }
         else{
-        System.out.println(name + " atacks " + target.getName() + ", dealing " + attackPower + " attack\n");
-        target.takeDamage(attackPower);
+            System.out.println(name + " atacks " + target.getName() + ", dealing " + attackPower + " attack\n");
+            target.takeDamage(attackPower);
         }
     }
 
