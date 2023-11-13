@@ -19,6 +19,7 @@ public class MainGame {
         Item potion = new Item(10, "Healing Potion"); /* This is just testing the inventory system */
         System.out.println("Here is a potion for your hard fought victory!");
         mainCharacter.addToInventory(potion); // Ngl idk why I needed to do mainCharacter first for the methods to work
+        mainCharacter.addToInventory(potion); // Testing to see if I can have multiple items
         mainCharacter.showInventory(); // Testing the showing inventory systemmaBobber
         
         scan.close();

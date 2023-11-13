@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class Character {
@@ -9,12 +10,14 @@ public class Character {
     protected double critChance; 
     protected double critMultiplier;
     private ArrayList<Item> inventory;
+    private HashMap<Item, Integer> amount;
 
     public Character(int health, int attackPower,String name){
         this.health = health;
         this.attackPower = attackPower;
         this.name = name;
         this.inventory = new ArrayList<>(); // Da invetory for da Player
+        this.amount = new HashMap<>();
     }
     // how the character and monster objects lose health
     public void takeDamage(double damage){
@@ -49,19 +52,28 @@ public class Character {
     }
 
        // Tells the user that they added an item into their inventory
-    public void addToInventory(Item item){
-        inventory.add(item);
-        System.out.println(item.getItemName() + " has been added to your inventory" );
+       public void addToInventory(Item item) {
+        if (!amount.containsKey(item)) {        // Checks if the hashMap contains our item already
+            amount.put(item, 1);           // If it does not then we add it to our list and map 
+            inventory.add(item);
+            System.out.println(item.getItemName() + " has been added to your inventory");
+        } else {
+            int currentAmount = amount.get(item);           // if it does have it already , we only increment the value in the map
+            amount.put(item, currentAmount + 1);            // We also don't add to our list so that we don't have any duplicates
+        }
     }
 
     // Displays the players Inventory
     public void showInventory(){
         System.out.println(name + "'s INVENTORY:");
         for(Item item : inventory){
-            System.out.println("- " + item.getItemName());
+            System.out.println("- " + item.getItemName() + ": AMOUNT - " + getAmount(item));
         }
     }
     
+    public int getAmount(Item item){
+        return amount.get(item);        // just gives us the current amount of whatever item we got in our inventory fr
+    }
     // Setter Methods
     public void setName(String name){
         this.name = name;
