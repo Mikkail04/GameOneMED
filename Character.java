@@ -67,7 +67,7 @@ public class Character {
     public void showInventory(){
         System.out.println(name + "'s INVENTORY:");
         for(Item item : inventory){
-            System.out.println("- " + item.getItemName() + "[" + getAmount(item) + "]");
+            System.out.println("- " + item.getItemName() + " [" + getAmount(item) + "]");
         }
     }
     
