@@ -10,7 +10,7 @@ public class MainGame {
         System.out.println("\nBrave Warrior what is your name?\n");
         Scanner scan = new Scanner(System.in);
         String player = scan.nextLine();
-        Character mainCharacter = new Character(1,10,player);
+        Character mainCharacter = new Character(100,10,player);
         Monster goblin = new Monster(50,5,"Goblin");
 
         System.out.println("Welcome Young Blood, for your first Task I want you to defeat that goblin over there\n");
