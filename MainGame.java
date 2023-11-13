@@ -53,10 +53,10 @@ public class MainGame {
             switch(opt){
                 //Attack sequence
                 case "1":
-                mc.attack(mon);
-                if(mon.getHealth() > 0)
-                    mon.attack(mc);
-                break;
+                    mc.attack(mon);
+                    if(mon.getHealth() > 0)
+                        mon.attack(mc);
+                    break;
                 //Defense sequence
                 case "2":
                     mon.weakAttack(mc);
@@ -65,6 +65,7 @@ public class MainGame {
                 case "SEXO??":
                     System.out.println("Ur attack got a small buff");
                     mc.setAttackPower(9999999);
+                    break;
                 default:
                     System.out.println("Enter something stupid");
             }
