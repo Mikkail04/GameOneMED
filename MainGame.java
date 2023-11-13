@@ -41,22 +41,22 @@ public class MainGame {
         int turnCount = 1;
         Scanner scan = new Scanner(System.in);
 
-        //Goes until one gets JFkd
+        //Runs until either the player or enemy dies
         while(mc.getHealth() != 0 && mon.getHealth() != 0){
             System.out.println("\n\nTurn: " + turnCount);
             System.out.println("Pick a move lil bro Your options are:\n" + //
                     "1: Attack\n" + //
                     "2: Defend\n");  
-            //Scanne the playere
+            //Scan the player's input
             String opt = scan.nextLine();
             switch(opt){
-                //Attake the mon
+                //Attack sequence
                 case "1":
                 mc.attack(mon);
                 if(mon.getHealth() > 0)
                     mon.attack(mc);
                 break;
-                //Defende da mon
+                //Defense sequence
                 case "2":
                     mon.weakAttack(mc);
                     break;
