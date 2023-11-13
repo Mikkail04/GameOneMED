@@ -36,7 +36,7 @@ public class Character {
     // Each attack the player does has a chance to land a critical Attack doubling their damage output
     public void critAttack(Character target){
         critMultiplier = 2;
-        System.out.println(getName() + " atacks " + target.getName() + " with a crit, dealing " + getAttackPower() * critMultiplier + " attack\n");
+        System.out.println(getName() + " lands a crit, dealing " + getAttackPower() * critMultiplier + " to " + target.getName() + ".\n");
         target.takeDamage(getAttackPower() * critMultiplier);
     }
     // Normal attack
@@ -46,7 +46,7 @@ public class Character {
             critAttack(target);
         }
         else{
-        System.out.println(name + " atacks " + target.getName() + ", dealing " + attackPower + " attack\n");
+        System.out.println(name + " atacks " + target.getName() + ", dealing " + attackPower + " damage\n");
         target.takeDamage(attackPower);
         }
     }
@@ -68,7 +68,7 @@ public class Character {
         System.out.println(name + "'s INVENTORY:");
         int i = 1;
         for(Item item : inventory){
-            System.out.println("- " + item.getItemName() + "[" + getAmount(item) + "]");
+            System.out.println("- " + item.getItemName() + " [" + getAmount(item) + "]");
         }
     }
     

@@ -13,7 +13,7 @@ public class Fight {
         //Goes until one gets JFkd
         while(mc.getHealth() != 0 && mon.getHealth() != 0){
             System.out.println("\n\nTurn: " + turnCount);
-            System.out.println("Pick a move lil bro. Your options are:\n" + //
+            System.out.println("What action would you like to take?:\n" + //
                     "1: Attack\n" + //
                     "2: Defend\n" +//
                     "3: Use an item\n");  
@@ -35,7 +35,7 @@ public class Fight {
                  * display a list of all the user's items
                  */
                 case "3":
-                    System.out.println("What item bruv");
+                    System.out.println("What item would you like to use?");
                     mc.showInventory();
                     userChoice = scan.nextLine();
                     //Right here is where an item would be used, need to think of a way to do it.

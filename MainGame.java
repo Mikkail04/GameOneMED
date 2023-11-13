@@ -13,7 +13,7 @@ public class MainGame {
         Character mainCharacter = new Character(100,10,player);
         Monster goblin = new Monster(50,5,"Goblin");
 
-        System.out.println("Welcome Young Blood, for your first Task I want you to defeat that goblin over there\n");
+        System.out.println("Welcome " + player + ", you shall be the defender of Earth. For your first task, you should defeat that goblin over there\n");
 
         Fight.vs(mainCharacter, goblin);
         Item potion = new Heals(10, "Healing Potion"); /* This is just testing the inventory system */
