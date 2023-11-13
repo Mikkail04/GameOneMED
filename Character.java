@@ -22,6 +22,7 @@ public class Character {
         if(health <= 0){
             health  = 0; // We want to make sure that our any enemy does not go under 0 health cause that wouldn't make sense LOL
             System.out.println("Game over hero!");
+            System.exit(0);
         }
         else{
             System.out.println(name + " has taken " + damage + " damage\n" + "[REMAINING HP ---- " + health + "]");
