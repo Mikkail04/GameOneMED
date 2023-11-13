@@ -15,7 +15,7 @@ public class MainGame {
 
         System.out.println("Welcome Young Blood, for your first Task I want you to defeat that goblin over there\n");
 
-        fight(mainCharacter, goblin);
+        Fight.vs(mainCharacter, goblin);
         Item potion = new Heals(10, "Healing Potion"); /* This is just testing the inventory system */
         System.out.println("Here is a potion for your hard fought victory!");
         mainCharacter.addToInventory(potion); // Ngl idk why I needed to do mainCharacter first for the methods to work
@@ -35,42 +35,5 @@ public class MainGame {
 
     public void ScenarioThree(){
         //Placeholder
-    }
-
-    //tbh I dont really got a plan for this one
-    public static void fight(Character mc, Monster mon){
-        int turnCount = 1;
-        Scanner scan = new Scanner(System.in);
-
-        //Runs until either the player or enemy dies
-        while(mc.getHealth() != 0 && mon.getHealth() != 0){
-            System.out.println("\n\nTurn: " + turnCount);
-            System.out.println("Pick a move lil bro Your options are:\n" + //
-                    "1: Attack\n" + //
-                    "2: Defend\n");  
-            //Scan the player's input
-            String opt = scan.nextLine();
-            switch(opt){
-                //Attack sequence
-                case "1":
-                    mc.attack(mon);
-                    if(mon.getHealth() > 0)
-                        mon.attack(mc);
-                    break;
-                //Defense sequence
-                case "2":
-                    mon.weakAttack(mc);
-                    break;
-                //SEXO????????????????????????
-                case "SEXO??":
-                    System.out.println("Ur attack got a small buff");
-                    mc.setAttackPower(9999999);
-                    break;
-                default:
-                    System.out.println("Enter something stupid");
-            }
-            turnCount++;
-        }
-        scan.close();
     }
 }
