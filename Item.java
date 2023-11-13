@@ -4,8 +4,7 @@ public class Item  {
     // weaponAtk probs won't be used until we create weapon items
     // Also reminder , we should make a HashMap to keep track of how many potions we got, we can even mix it up and add buffs , etc
     private String itemName;
-    private int weaponAtk;
-    private int heal;
+    private int power;
 
     /* Here we are creating two seperate constructors
     which when called upon can create an item object, pst btw I had to change up the order of the parameters cause java
@@ -13,14 +12,9 @@ public class Item  {
     Just don't forget to switch the parameters around when creating a healing potion object
     */ 
 
-    public Item(String itemName, int weaponAtk){
+    public Item(int power, String itemName){
         this.itemName = itemName;
-        this.weaponAtk = weaponAtk;
-    }
-
-    public Item(int heal, String itemName){ 
-        this.itemName = itemName;
-        this.heal = heal;
+        this.power = power;
     }
 
     public String getItemName() {
