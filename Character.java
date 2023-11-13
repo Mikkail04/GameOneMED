@@ -50,12 +50,12 @@ public class Character {
        // Tells the user that they added an item into their inventory
     public void addToInventory(Item item){
         inventory.add(item);
-        System.out.println(name + " has added " + item.getItemName() + " to their inventory" );
+        System.out.println(item.getItemName() + " has been added to your inventory" );
     }
 
     // Displays the players Inventory
     public void showInventory(){
-        System.out.println(name + " INVETORY:");
+        System.out.println(name + "'s INVENTORY:");
         for(Item item : inventory){
             System.out.println("- " + item.getItemName());
         }
