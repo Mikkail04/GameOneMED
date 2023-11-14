@@ -10,10 +10,10 @@ public class MainGame {
         System.out.println("\nBrave Warrior what is your name?\n");
         Scanner scan = new Scanner(System.in);
         String player = scan.nextLine();
-        Character mainCharacter = new Character(100,10,player); // Player
-        Monster goblin = new Monster(50,5,"Goblin");
-        Monster goblinTwo = new Monster(50,5,"GoblinTwo");
-        Monster hobgoblin = new Monster(75,10,"Hobgoblin");
+        Character mainCharacter = new Character(player,100,10); // Player
+        Monster goblin = new Monster("Goblin", 50, 5);
+        Monster goblinTwo = new Monster("GoblinTwo", 50, 5);;
+        Monster hobgoblin = new Monster("Hobgoblin", 10, 75);
 
         System.out.println("Welcome " + player + ", you shall be the defender of Earth. For your first task, you should defeat that goblin over there\n");
 
