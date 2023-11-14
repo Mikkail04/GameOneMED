@@ -11,12 +11,23 @@ public class MainGame {
         Scanner scan = new Scanner(System.in);
         String player = scan.nextLine();
         Character mainCharacter = new Character(player,100,10); // Player
+
+        // Intro message for the player
+        System.out.println("\nWelcome " + player + ", you shall be the defender of Earth. For your first task, you should enter the goblin forest and hunt down Soujoubou, the Tengu Goblin.He holds the first piece of the [TBD] aramor.\n");
+
+        // Runs scenarios then closes the game after each scenario is finished
+        ScenarioOne(mainCharacter, scan);
+        // ScenarioTwo(mainCharacter, scan); // commented out bc it's not done
+        scan.close();
+    }
+
+    // This is the first scenario the player will be placed in
+    public static void ScenarioOne(Character mainCharacter, Scanner scan){
+        System.out.println("\nAs you approach the forest, you see some bushes rumbling before something jumps out at you.\n");
         Monster goblin = new Monster("Goblin", 50, 5);
         Monster goblinTwo = new Monster("GoblinTwo", 50, 5);;
-        Monster hobgoblin = new Monster("Hobgoblin", 10, 75);
-
-        System.out.println("\nWelcome " + player + ", you shall be the defender of Earth. For your first task, you should defeat that goblin over there\n");
-
+        Monster hobgoblin = new Monster("Hobgoblin", 75, 10);
+        System.out.println("A Goblin approaches!\nGoblins have 50 health and 5 ATK.");
         Fight.vs(mainCharacter, goblin, scan);
         HealPotion heal  = new HealPotion("Healing Potion", 10); /* This is just testing the inventory system */
         System.out.println("Here is a potion for your hard fought victory!");
@@ -37,20 +48,19 @@ public class MainGame {
         double hobGobChance = Math.random() * 100;
         if (hobGobChance <= 30 ){
         System.out.println("\n\n\nA hobgoblin approaches!");
+        System.out.println("Hobgoblins have 75 health and 10 ATK.");
         Fight.vs(mainCharacter,hobgoblin, scan);
         System.out.println("Here are two potions for your hard fought victory!");
         mainCharacter.addToInventory(heal); 
         mainCharacter.addToInventory(heal);
         }
-        scan.close();
     }
 
-    public void ScenarioOne(){
-        // PlaceHolder
-    }
-
-    public void ScenarioTwo(){
-        // PlaceHolder
+    // This is the second scenario the player will be placed in
+    public static void ScenarioTwo(Character mainCharacter, Scanner scan){
+       // test that scenario 2 activates before the game closes
+        System.out.println("Scenario 2");
+        // enter actual scenario 2 stuff
     }
 
     public void ScenarioThree(){
