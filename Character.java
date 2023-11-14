@@ -66,9 +66,8 @@ public class Character {
     // Displays the players Inventory
     public void showInventory(){
         System.out.println(name + "'s INVENTORY:");
-        int i = 1;
         for(Item item : inventory){
-            System.out.println("- " + item.getItemName() + " [" + getAmount(item) + "]");
+            System.out.println((inventory.indexOf(item) + 1 ) + " - " + item.getItemName() + " [" + getAmount(item) + "]");
         }
     }
     

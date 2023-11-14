@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
 public class Fight {
-
     /*
      * Fight.vs(maincharacter, whatever the fuck they fighting);
      * Doing it like this means I can do let the mc get jumped later, though thats a pain to add.
      */
-    public static void vs(Character mc, Monster mon){
+    public static void vs(Character mc, Monster mon, Scanner scan){
         int turnCount = 1;
-        Scanner scan = new Scanner(System.in);
 
         //Goes until one gets JFkd
         while(mc.getHealth() != 0 && mon.getHealth() != 0){
@@ -50,6 +48,6 @@ public class Fight {
             }
             turnCount++;
         }
-        scan.close();
+        //scan.close();
     }
 }
