@@ -78,7 +78,7 @@ public class Character {
         if (!amount.containsKey(item)) {        // Checks if the hashMap contains our item already
             amount.put(item, 1);           // If it does not then we add it to our list and map 
             inventory.add(item);
-            System.out.println(item.getItemName() + " has been added to your inventory");
+            System.out.println(item.getName() + " has been added to your inventory\n");
         } 
         else {
             int currentAmount = amount.get(item);           // if it does have it already , we only increment the value in the map
@@ -90,9 +90,9 @@ public class Character {
      * Displays the MC's inventory.
      */
     public void showInventory(){
-        System.out.println(name + "'s INVENTORY:");
+        System.out.println(name + "'s INVENTORY:\n");
         for(Item item : inventory){
-            System.out.println((inventory.indexOf(item) + 1 ) + " - " + item.getItemName() + " [" + getAmount(item) + "]");
+            System.out.println((inventory.indexOf(item) + 1 ) + " - " + item.getName() + " [" + getAmount(item) + "]");
         }
     }
 
