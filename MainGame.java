@@ -10,26 +10,26 @@ public class MainGame {
         System.out.println("\nBrave Warrior what is your name?\n");
         Scanner scan = new Scanner(System.in);
         String player = scan.nextLine();
-        Character mainCharacter = new Character(100,10,player); // Player
-        Monster goblin = new Monster(50,5,"Goblin");
-        Monster goblinTwo = new Monster(50,5,"GoblinTwo");
-        Monster hobgoblin = new Monster(75,10,"Hobgoblin");
+        Character mainCharacter = new Character(player,100,10); // Player
+        Monster goblin = new Monster("Goblin", 50, 5);
+        Monster goblinTwo = new Monster("GoblinTwo", 50, 5);;
+        Monster hobgoblin = new Monster("Hobgoblin", 10, 75);
 
-        System.out.println("Welcome " + player + ", you shall be the defender of Earth. For your first task, you should defeat that goblin over there\n");
+        System.out.println("\nWelcome " + player + ", you shall be the defender of Earth. For your first task, you should defeat that goblin over there\n");
 
         Fight.vs(mainCharacter, goblin, scan);
-        Item potion = new Heals(10, "Healing Potion"); /* This is just testing the inventory system */
+        HealPotion heal  = new HealPotion("Healing Potion", 10); /* This is just testing the inventory system */
         System.out.println("Here is a potion for your hard fought victory!");
-        mainCharacter.addToInventory(potion); // Ngl idk why I needed to do mainCharacter first for the methods to work
+        mainCharacter.addToInventory(heal); // Ngl idk why I needed to do mainCharacter first for the methods to work
         //mainCharacter.addToInventory(potion); // Testing to see if I can have multiple items
         mainCharacter.showInventory(); // Testing the showing inventory systemmaBobber
         
         // The player now receives a potion from fighting the second goblin
         System.out.println("\n\n\nAnother goblin approaches!");
-        Fight.vs(mainCharacter, goblinTwo, scan); 
+        Fight.vs(mainCharacter, goblinTwo, scan);
         System.out.println("Here is a potion for your hard fought victory!");
-        mainCharacter.addToInventory(potion); 
-
+        mainCharacter.addToInventory(potion);
+        
         // Chance for a hobgoblin to spawn that gives the player two potions
         double hobGobChance = Math.random() * 100;
         if (hobGobChance <= 30 ){
@@ -37,7 +37,7 @@ public class MainGame {
         Fight.vs(mainCharacter,hobgoblin, scan);
         System.out.println("Here are two potions for your hard fought victory!");
         mainCharacter.addToInventory(potion); 
-        mainCharacter.addToInventory(potion); 
+        mainCharacter.addToInventory(potion);
         }
         scan.close();
     }

@@ -1,23 +1,40 @@
-public class Item  {
+// // Bro this item class got me fucked up, I just sat her debugging for a min, im bout to knock fr
+// public class Item  {
+//     private String itemName;
+//     private int itemPower;
 
-    // Bro this item class got me fucked up, I just sat her debugging for a min, im bout to knock fr
-    // weaponAtk probs won't be used until we create weapon items
-    // Also reminder , we should make a HashMap to keep track of how many potions we got, we can even mix it up and add buffs , etc
-    private String itemName;
-    private int power;
+//     /**
+//      * Creates an item with a name and item power
+//      * @param itemPower An int representing the power of the item (Heal or Attack)
+//      * @param itemName A string representing the item name
+//     */
+//     public Item(int itemPower, String itemName){
+//         this.itemName = itemName;
+//         this.itemPower = itemPower;
+//     }
 
-    /* Here we are creating two seperate constructors
-    which when called upon can create an item object, pst btw I had to change up the order of the parameters cause java
-    was being annoying and thought the constructor was duplicated
-    Just don't forget to switch the parameters around when creating a healing potion object
-    */ 
+//     /**
+//      * Returns the name of the item
+//      * @return A string representing the item name.
+//      */
+//     public String getItemName() {
+//         return itemName;
+//     }
 
-    public Item(int power, String itemName){
-        this.itemName = itemName;
-        this.power = power;
-    }
+//     /**
+//      * Returns the power of the item (Heal Power or Attack Power)
+//      * @return An int representing the item power.
+//      */
+//     public int getItemPower(){
+//         return itemPower;
+//     }
+// }
 
-    public String getItemName() {
-        return itemName;
-    }
+
+// TIME TO REVAMP ALL THE INVENTORY WOHOOOOOO
+
+
+public interface Item {
+    void use(); // Common method that everything that implements this needs to use
+    String getName(); // ^^
 }
