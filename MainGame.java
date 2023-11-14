@@ -28,7 +28,7 @@ public class MainGame {
         System.out.println("\n\n\nAnother goblin approaches!");
         Fight.vs(mainCharacter, goblinTwo, scan);
         System.out.println("Here is a potion for your hard fought victory! I also added an extra rare buff Potion!");
-        BuffPotion buff = new BuffPotion("Buff Potion", 10);
+        BuffPotion buff = new BuffPotion("Buff Potion", 15);
         mainCharacter.addToInventory(heal);
         mainCharacter.addToInventory(buff);
         mainCharacter.showInventory(); // testig to see if i have multiple itenms in correct index
