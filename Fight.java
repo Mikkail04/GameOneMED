@@ -1,16 +1,19 @@
 import java.util.Scanner;
 
 public class Fight {
-    /*
-     * Fight.vs(maincharacter, whatever the fuck they fighting);
-     * Doing it like this means I can do let the mc get jumped later, though thats a pain to add.
+    
+    /**
+     * vs method. You call it by doing Fight.vs([args])
+     * @param mc Character object. Our wonderful main character
+     * @param mon Monster object. Whatever poor soul is about to get obliterated.
+     * @param scan No resource leak here buddy.
      */
     public static void vs(Character mc, Monster mon, Scanner scan){
         int turnCount = 1;
 
-        //Goes until one gets JFkd
+        //While loop continues until one gets JFkd (they die)
         while(mc.getHealth() != 0 && mon.getHealth() != 0){
-            System.out.println("\n\nTurn: " + turnCount);
+            System.out.println("\nTurn: " + turnCount);
             System.out.println("What action would you like to take?:\n" + //
                     "1: Attack\n" + //
                     "2: Defend\n" +//
@@ -29,14 +32,15 @@ public class Fight {
                     mon.weakAttack(mc);
                     break;
                 /* *
-                 * This one gonna be dumb. Prob not the best way to do it but ima use another switch case. Later gonna have to 
-                 * display a list of all the user's items
+                 * Displays a list of the user's inventory. They can pick an item to use, or leave
                  */
                 case "3":
                     System.out.println("What item would you like to use?");
                     mc.showInventory();
                     userChoice = scan.nextLine();
-                    //Right here is where an item would be used, need to think of a way to do it.
+                    /**Right here is where an item would be used, need to think of a way to do it.
+                     * For now just enter anything to exit it.
+                     */ 
                     break;
                 //Buffe da dong
                 case "SEXO??":
@@ -48,6 +52,5 @@ public class Fight {
             }
             turnCount++;
         }
-        //scan.close();
     }
 }
