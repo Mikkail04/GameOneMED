@@ -10,18 +10,20 @@ public class MainGame {
         System.out.println("\nBrave Warrior what is your name?\n");
         Scanner scan = new Scanner(System.in);
         String player = scan.nextLine();
-        Character mainCharacter = new Character(100,10,player);
+        Character mainCharacter = new Character(100,10,player); // Player
         Monster goblin = new Monster(50,5,"Goblin");
+        Monster goblinTwo = new Monster(50,5,"TestDummy");
 
         System.out.println("Welcome " + player + ", you shall be the defender of Earth. For your first task, you should defeat that goblin over there\n");
 
-        Fight.vs(mainCharacter, goblin);
+        Fight.vs(mainCharacter, goblin, scan);
         Item potion = new Heals(10, "Healing Potion"); /* This is just testing the inventory system */
         System.out.println("Here is a potion for your hard fought victory!");
         mainCharacter.addToInventory(potion); // Ngl idk why I needed to do mainCharacter first for the methods to work
         mainCharacter.addToInventory(potion); // Testing to see if I can have multiple items
         mainCharacter.showInventory(); // Testing the showing inventory systemmaBobber
-        
+
+        Fight.vs(mainCharacter,goblinTwo, scan);
         scan.close();
     }
 
