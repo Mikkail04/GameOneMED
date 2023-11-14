@@ -27,8 +27,11 @@ public class MainGame {
         // The player now receives a potion from fighting the second goblin
         System.out.println("\n\n\nAnother goblin approaches!");
         Fight.vs(mainCharacter, goblinTwo, scan);
-        System.out.println("Here is a potion for your hard fought victory!");
-        mainCharacter.addToInventory(potion);
+        System.out.println("Here is a potion for your hard fought victory! I also added an extra rare buff Potion!");
+        BuffPotion buff = new BuffPotion("Buff Potion", 15);
+        mainCharacter.addToInventory(heal);
+        mainCharacter.addToInventory(buff);
+        mainCharacter.showInventory(); // testig to see if i have multiple itenms in correct index
         
         // Chance for a hobgoblin to spawn that gives the player two potions
         double hobGobChance = Math.random() * 100;
@@ -36,8 +39,8 @@ public class MainGame {
         System.out.println("\n\n\nA hobgoblin approaches!");
         Fight.vs(mainCharacter,hobgoblin, scan);
         System.out.println("Here are two potions for your hard fought victory!");
-        mainCharacter.addToInventory(potion); 
-        mainCharacter.addToInventory(potion);
+        mainCharacter.addToInventory(heal); 
+        mainCharacter.addToInventory(heal);
         }
         scan.close();
     }
