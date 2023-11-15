@@ -31,7 +31,7 @@ public class MainGame {
         Monster goblinTwo = new Monster("Goblin", 50, 5);;
         Monster hobgoblin = new Monster("Hobgoblin", 75, 10);
         Monster boss1 = new Monster("Soujoubou, the Tengu Goblin", 1, 30);
-
+        Armor armorSet = new Armor("Tengu Armor", 10);
         // First encounter
         System.out.println("A Goblin approaches!\nGoblins have 50 health and 5 ATK.");
         Fight.vs(mainCharacter, goblin, scan);
@@ -77,6 +77,7 @@ public class MainGame {
         mainCharacter.addToInventory(buff);
         mainCharacter.addToInventory(buff);
         mainCharacter.addToInventory(buff);
+        mainCharacter.addToInventory(armorSet);
         mainCharacter.showInventory();
         // Story message that tells the player where they're headed next
         System.out.println("\nCongratulations hero, you have defeated the first of the Phantom Generals! \nThis feat has never been accomplished before, you might truly be the chosen one after all...\nI recommend you head to [TBD] next in order to hunt down [TBD]. Good luck, hero.\n");

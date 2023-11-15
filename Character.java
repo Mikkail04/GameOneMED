@@ -43,6 +43,72 @@ public class Character {
         }
         
     }
+    /**
+     * 
+     * @param buffAmount // how much the players attack gets buffed by
+     */
+    public void buffPlayerAttack(int buffAmount){
+        attackPower += buffAmount;
+        System.out.println(name + "s, attack has increased by " +  buffAmount + ". Current attack power is: " + attackPower);
+    }
+
+    /**
+     * 
+     * @param healAmount How much health our potion is healing by
+     */
+    public void heal(int healAmount){
+        health += healAmount;
+        System.out.println(name + " is healed by " + healAmount + " health points. Current health: " + health);
+    }
+
+    /**
+     * 
+     * @return gives us how big the characters inventory currently is
+     */
+    public int getInventorySize(){
+        return inventory.size();
+    }
+
+    /**
+     * Removes an item from the character's inventory based on the provided index.
+     *
+     * @param index The index of the item to be removed from the inventory.
+     * @return The removed item, or null if the index is out of bounds.
+     */
+    public Item removeItemFromInventory(int index) {
+        if (index >= 0 && index < inventory.size()) {
+            Item removedItem = inventory.get(index);
+
+            int currentAmount = amount.get(removedItem);
+
+            if (currentAmount > 1) {
+                amount.put(removedItem, currentAmount - 1);
+            } else {
+                amount.remove(removedItem);
+                inventory.remove(index);
+            }
+
+            return removedItem;
+        } else {
+            System.out.println("Invalid index. No item removed.");
+            return null;
+        }
+    }
+
+     /**
+     * Gets an item from the character's inventory based on the provided index.
+     *
+     * @param index The index of the item in the inventory.
+     * @return The item at the specified index, or null if the index is out of bounds.
+     */
+    public Item getItemFromInventory(int index) {
+        if (index >= 0 && index < inventory.size()) {
+            return inventory.get(index);
+        } else {
+            System.out.println("Invalid index. No item found.");
+            return null;
+        }
+    }
     
     /**
      * Critical Attack. Big boi damge
@@ -83,6 +149,7 @@ public class Character {
         else {
             int currentAmount = amount.get(item);           // if it does have it already , we only increment the value in the map
             amount.put(item, currentAmount + 1);            // We also don't add to our list so that we don't have any duplicates
+            System.out.println(item.getName() + " has been added to your inventory\n");
         }
     }
 
