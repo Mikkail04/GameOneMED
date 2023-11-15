@@ -56,7 +56,7 @@ public class Fight {
     public static void vs(Character mc, Monster mon, Scanner scan) {
         int turnCount = 1;
 
-        // While loop continues until one gets JFkd (they die)
+        // While loop continues until one dies
         while (mc.getHealth() > 0 && mon.getHealth() > 0) {
             System.out.println("\nTurn: " + turnCount);
             System.out.println("What action would you like to take?:\n" +
