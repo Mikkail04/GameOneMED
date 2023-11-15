@@ -115,6 +115,7 @@ public class MainGame {
         System.out.println("\n\n\nFiller Text");
         System.out.println("Nama, the King of the Kaiju approaches!");
         // Scenario two boss fight starts
+        // Condition somewhere so that the boss gets extra health based on how many honokaiju have been defeated
         Fight.vs(mainCharacter, boss2, scan);
         // bonus loot
         System.out.println("You have defeated a Phantom General! You will receive extra loot!");
